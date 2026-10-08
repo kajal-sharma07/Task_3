@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Web Layouts</title>
+
+    <style>
+
+        /* ---------- BASIC CSS ---------- */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+
+        /* ---------- SIDEBAR LAYOUT ---------- */
+
+        .sidebar-layout {
+            display: flex;
+            min-height: 300px;
+            margin: 20px;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            margin-bottom: 8px;
+        }
+
+        .sidebar a:hover {
+            background-color: #444;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+        }
+
+
+        /* ---------- PRODUCT CARD ---------- */
+
+        .product-section {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product-card {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 3px solid #333;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-card h2 {
+            margin: 15px 0 10px;
+        }
+
+        .product-card p {
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .buy-btn:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* ---------- BLOG SECTION ---------- */
+
+        .blog-section {
+            padding: 30px;
+        }
+
+        .blog-section h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .blog-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .blog-card {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .blog-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            line-height: 1.6;
+        }
+
+
+        /* ---------- MOBILE RESPONSIVE ---------- */
+
+        @media (max-width: 768px) {
+
+            /* Sidebar becomes vertical/top navigation */
+
+            .sidebar-layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .sidebar a {
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+
+            /* Blog cards become one column */
+
+            .blog-container {
+                flex-direction: column;
+            }
+
+            .blog-card {
+                width: 100%;
+            }
+
+
+            /* Product card */
+
+            .product-card {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <section class="sidebar-layout">
+
+        <aside class="sidebar">
+
+            <h2>My Website</h2>
+
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
+
+        </aside>
+
+
+        <main class="main-content">
+
+            <h1>Welcome to My Website</h1>
+
+            <p>
+                This is the main content area.
+                The sidebar is placed on the left side
+                on desktop devices.
+            </p>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================= PRODUCT CARD ================= -->
+
+    <section class="product-section">
+
+        <h1>Product Card</h1>
+
+        <div class="product-card">
+
+            <img 
+                src="https://via.placeholder.com/300x180"
+                alt="Product"
+            >
+
+            <h2>Wireless Headphones</h2>
+
+            <p>
+                High quality wireless headphones
+                with excellent sound and comfortable design.
+            </p>
+
+            <div class="price">
+                ₹1,999
+            </div>
+
+            <button class="buy-btn">
+                Buy Now
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BLOG SECTION ================= -->
+
+    <section class="blog-section">
+
+        <h1>Latest Blogs</h1>
+
+        <div class="blog-container">
+
+            <article class="blog-card">
+
+                <h2>HTML Basics</h2>
+
+                <p>
+                    HTML is used to create the structure
+                    of a webpage. It provides elements
+                    such as headings, paragraphs, images,
+                    links and forms.
+                </p>
+
+            </article>
+
+
+            <article class="blog-card">
+
+                <h2>CSS Basics</h2>
+
+                <p>
+                    CSS is used to style HTML elements.
+                    We can change colors, fonts, spacing,
+                    borders and layouts using CSS.
+                </p>
+
+            </article>
+
+
+            <article class="blog-card">
+
+                <h2>Flexbox</h2>
+
+                <p>
+                    Flexbox is a CSS layout system that
+                    helps us arrange elements in rows
+                    or columns and create responsive layouts.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>
